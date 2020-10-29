@@ -1,0 +1,21 @@
+{
+  "name": "golf-scorecard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss:css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylinsquire/golf-scorecard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taylinsquire/golf-scorecard/issues"
+  },
+  "homepage": "https://github.com/taylinsquire/golf-scorecard#readme"
+}
