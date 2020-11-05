@@ -1,3 +1,40 @@
+body {
+  margin: 0;
+}
 
+table {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+td {
+  text-align: center;
+}
+
+.col {
+  text-align: center;
+}
+
+.page {
+  width: 100vw;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.golf-table {
+  margin: 0;
+  padding: 0;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+#title {
+  margin-left: 10px;
+  text-align: center;
+}
 
 /*# sourceMappingURL=styles.css.map */
