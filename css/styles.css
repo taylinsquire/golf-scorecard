@@ -1,40 +1,41 @@
 body {
   margin: 0;
+  padding: 0;
 }
 
 table {
-  overflow-x: scroll;
-  white-space: nowrap;
+  width: 100%;
 }
 
 td {
   text-align: center;
 }
 
-.col {
-  text-align: center;
-}
-
-.page {
-  width: 100vw;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.container-fluid {
-  padding: 0;
-}
-
-.golf-table {
+.table-input {
+  width: 100%;
+  border: none;
   margin: 0;
-  padding: 0;
-  overflow-x: scroll;
-  white-space: nowrap;
+  text-align: center;
 }
 
-#title {
-  margin-left: 10px;
-  text-align: center;
+.table td,
+.table th {
+  padding: 5px 7px;
+}
+
+td.player-score {
+  padding: 5px 0;
+}
+
+.container-md {
+  justify-content: center;
+}
+
+.container-sm {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
