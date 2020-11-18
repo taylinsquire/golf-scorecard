@@ -27,11 +27,11 @@ td.player-score {
   padding: 5px 0;
 }
 
-.container-md {
+.container-sm {
   justify-content: center;
 }
 
-.container-sm {
+.container-xs {
   overflow: auto;
   white-space: nowrap;
   padding: 0;
