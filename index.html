@@ -1,302 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Golf Scorecard</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golf Scorecard</title>
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
-        <link rel="stylesheet" href="css/styles.css" />
-    </head>
-    <body>
-        <nav class="navbar navbar-dark bg-dark">
-            <h2 class="navbar-brand">Golf Scorecard</h2>
-        </nav>
-        <div class="page">
-            <div class="container-xs container-sm">
-                <table class="col table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col" colspan="11" id="frontHeader">Front 9
-                                <div class="btn-group">
-                                    <button class="dropdown-toggle" href="#" id="course-selection" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Select Course
-                                    </button>
-                                    <div class="dropdown-menu" id="courses-dropdown" aria-labelledby="navbarDropdown">
-                                    </div>
-                                </div>
-                                <div class="btn-group" id="tee-dropdown"></div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Hole</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>Total</td>
-                        </tr>
-                        <tr id="front-yardage">
-                            <th scope="row">Yardage</th>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                        </tr>
-                        <tr id="front-par">
-                            <th scope="row">Par</th>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input class="table-input" id="player1-name1" type="text" value="player1"></th>
-                            <td class="player-score"><input class="table-input" id="player1-hole1" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole2" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole3" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole4" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole5" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole6" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole7" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole8" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole9" type="number"></td>
-                            <td id="player1-total">0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input class="table-input" id="player2-name1" type="text" value="player2"></th>
-                                <td class="player-score"><input class="table-input" id="player2-hole1" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole2" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole3" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole4" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole5" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole6" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole7" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole8" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole9" type="number"></td>
-                                <td id="player2-total">0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input class="table-input" id="player3-name1" type="text" value="player3"></th>
-                                <td class="player-score"><input class="table-input" id="player3-hole1" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole2" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole3" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole4" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole5" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole6" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole7" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole8" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole9" type="number"></td>
-                                <td id="player3-total">0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input class="table-input" id="player4-name1" type="text" value="player4"></th>
-                                <td class="player-score"><input class="table-input" id="player4-hole1" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole2" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole3" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole4" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole5" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole6" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole7" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole8" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole9" type="number"></td>
-                                <td id="player4-total">0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Handicap</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>Total</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col" colspan="11">Back 9</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Hole</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>Total</td>
-                        </tr>
-                        <tr id="back-yardage">
-                            <th scope="row">Yardage</th>
-                                <td>000</td>
-                                <td>000</td>
-                                <td>000</td>
-                                <td>000</td>
-                                <td>000</td>
-                                <td>000</td>
-                                <td>000</td>
-                                <td>000</td>
-                                <td>000</td>
-                                <td>000</td>
-                        </tr>
-                        <tr id="back-par">
-                            <th scope="row">Par</th>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                            <td>000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input class="table-input" id="player1-name2" type="text" value="player1"></th>
-                            <td class="player-score"><input class="table-input" id="player1-hole10" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole11" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole12" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole13" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole14" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole15" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole16" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole17" type="number"></td>
-                            <td class="player-score"><input class="table-input" id="player1-hole18" type="number"></td>
-                            <td id="player1-total">0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input class="table-input" id="player2-name2" type="text" value="player2"></th>
-                                <td class="player-score"><input class="table-input" id="player2-hole10" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole11" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole12" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole13" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole14" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole15" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole16" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole17" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player2-hole18" type="number"></td>
-                                <td id="player2-total">0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input class="table-input" id="player3-name3" type="text" value="player3"></th>
-                                <td class="player-score"><input class="table-input" id="player3-hole10" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole11" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole12" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole13" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole14" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole15" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole16" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole17" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player3-hole18" type="number"></td>
-                                <td id="player3-total">0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input class="table-input" id="player4-name4" type="text" value="player4"></th>
-                                <td class="player-score"><input class="table-input" id="player4-hole10" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole11" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole12" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole13" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole14" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole15" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole16" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole17" type="number"></td>
-                                <td class="player-score"><input class="table-input" id="player4-hole18" type="number"></td>
-                                <td id="player4-total">0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Handicap</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>Total</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-bordered">
-                    <tr>
-                        <th id="player1-strokes-name">Player1 Strokes</th>
-                        <th>Par</th>
-                        <td id="player1-message" rowspan="2">Ready for the PGA</td>
-                    </tr>
-                    <tr>
-                        <td id="player1-strokes"></td>
-                        <td class="player-par"></td>
-                    </tr>
-                </table>
-                <table class="table table-bordered">
-                    <tr>
-                        <th id="player2-strokes-name">Player2 Strokes</th>
-                        <th>Par</th>
-                        <td id="player2-message" rowspan="2">Ready for the PGA</td>
-                    </tr>
-                    <tr>
-                        <td id="player2-strokes"></td>
-                        <td class="player-par"></td>
-                    </tr>
-                </table>
-                <table class="table table-bordered">
-                    <tr>
-                        <th id="player3-strokes-name">Player3 Strokes</th>
-                        <th>Par</th>
-                        <td id="player3-message" rowspan="2">Ready for the PGA</td>
-                    </tr>
-                    <tr>
-                        <td id="player3-strokes"></td>
-                        <td class="player-par"></td>
-                    </tr>
-                </table>
-                <table class="table table-bordered">
-                    <tr>
-                        <th id="player4-strokes-name">Player4 Strokes</th>
-                        <th>Par</th>
-                        <td id="player4-message" rowspan="2">Ready for the PGA</td>
-                    </tr>
-                    <tr>
-                        <td id="player4-strokes"></td>
-                        <td class="player-par"></td>
-                    </tr>
-                </table>
-            </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <h2 class="navbar-brand">Golf Scorecard</h2>
+    </nav>
+    <div class="page">
+      <div class="container-xs container-sm">
+        <table class="col table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col" colspan="12" id="frontHeader">
+                Front 9
+                <div class="btn-group">
+                  <button class="dropdown-toggle" href="#" id="course-selection" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Course</button>
+                  <div class="dropdown-menu" id="courses-dropdown" aria-labelledby="navbarDropdown"></div>
+                </div>
+                <div class="btn-group" id="tee-dropdown"></div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Hole</th>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>Out</td>
+              <td>Total</td>
+            </tr>
+            <tr id="front-yardage">
+              <th scope="row">Yards</th>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+            </tr>
+            <tr id="front-par">
+              <th scope="row">Par</th>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+            </tr>
+            <tr>
+              <th scope="row"><input class="table-input" id="player1-name1" onchange="players[0].changeName()" type="text" value="" /></th>
+              <td class="player-score"><input class="table-input" id="player1-hole1" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole2" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole3" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole4" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole5" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole6" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole7" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole8" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole9" type="number" /></td>
+              <td id="player1-total-front">0</td>
+              <td class="player1-total">0</td>
+            </tr>
+            <tr>
+              <th scope="row"><input class="table-input" id="player2-name1" onchange="players[1].changeName()" type="text" value="" /></th>
+              <td class="player-score"><input class="table-input" id="player2-hole1" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole2" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole3" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole4" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole5" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole6" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole7" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole8" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole9" type="number" /></td>
+              <td id="player2-total-front">0</td>
+              <td class="player2-total">0</td>
+            </tr>
+            <tr>
+              <th scope="row"><input class="table-input" id="player3-name1" onchange="players[2].changeName()" type="text" value="" /></th>
+              <td class="player-score"><input class="table-input" id="player3-hole1" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole2" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole3" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole4" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole5" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole6" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole7" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole8" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole9" type="number" /></td>
+              <td id="player3-total-front">0</td>
+              <td class="player3-total">0</td>
+            </tr>
+            <tr>
+              <th scope="row"><input class="table-input" id="player4-name1" onchange="players[3].changeName()" type="text" value="" /></th>
+              <td class="player-score"><input class="table-input" id="player4-hole1" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole2" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole3" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole4" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole5" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole6" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole7" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole8" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole9" type="number" /></td>
+              <td id="player4-total-front">0</td>
+              <td class="player4-total">0</td>
+            </tr>
+            <tr id="front-hcap">
+              <th scope="row">Handicap</th>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col" colspan="12">Back 9</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Hole</th>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>In</td>
+              <td>Total</td>
+            </tr>
+            <tr id="back-yardage">
+              <th scope="row">Yards</th>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+            </tr>
+            <tr id="back-par">
+              <th scope="row">Par</th>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+            </tr>
+            <tr>
+              <th scope="row"><input class="table-input" id="player1-name2" type="text" value="" readonly /></th>
+              <td class="player-score"><input class="table-input" id="player1-hole10" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole11" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole12" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole13" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole14" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole15" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole16" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole17" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player1-hole18" type="number" /></td>
+              <td id="player1-total-back">0</td>
+              <td class="player1-total">0</td>
+            </tr>
+            <tr>
+              <th scope="row"><input class="table-input" id="player2-name2" type="text" value="" readonly /></th>
+              <td class="player-score"><input class="table-input" id="player2-hole10" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole11" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole12" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole13" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole14" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole15" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole16" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole17" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player2-hole18" type="number" /></td>
+              <td id="player2-total-back">0</td>
+              <td class="player2-total">0</td>
+            </tr>
+            <tr>
+              <th scope="row"><input class="table-input" id="player3-name2" type="text" value="" readonly /></th>
+              <td class="player-score"><input class="table-input" id="player3-hole10" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole11" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole12" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole13" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole14" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole15" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole16" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole17" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player3-hole18" type="number" /></td>
+              <td id="player3-total-back">0</td>
+              <td class="player3-total">0</td>
+            </tr>
+            <tr>
+              <th scope="row"><input class="table-input" id="player4-name2" type="text" value="" readonly /></th>
+              <td class="player-score"><input class="table-input" id="player4-hole10" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole11" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole12" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole13" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole14" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole15" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole16" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole17" type="number" /></td>
+              <td class="player-score"><input class="table-input" id="player4-hole18" type="number" /></td>
+              <td id="player4-total-back">0</td>
+              <td class="player4-total">0</td>
+            </tr>
+            <tr id="back-hcap">
+              <th scope="row">Handicap</th>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+              <td>000</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-bordered" id="player1-final">
+          <tr>
+            <th id="player1-strokes-name"></th>
+            <td id="player1-message" rowspan="2"></td>
+          </tr>
+          <tr>
+            <td id="player1-strokes"></td>
+          </tr>
+        </table>
+        <table class="table table-bordered" id="player2-final">
+          <tr>
+            <th id="player2-strokes-name"></th>
+            <td id="player2-message" rowspan="2"></td>
+          </tr>
+          <tr>
+            <td id="player2-strokes"></td>
+          </tr>
+        </table>
+        <table class="table table-bordered" id="player3-final">
+          <tr>
+            <th id="player3-strokes-name"></th>
+            <td id="player3-message" rowspan="2"></td>
+          </tr>
+          <tr>
+            <td id="player3-strokes"></td>
+          </tr>
+        </table>
+        <table class="table table-bordered" id="player4-final">
+          <tr>
+            <th id="player4-strokes-name"></th>
+            <td id="player4-message" rowspan="2"></td>
+          </tr>
+          <tr>
+            <td id="player4-strokes"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center" style="position: relative; min-height: 200px">
+      <!-- Then put toasts within -->
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" style="position: fixed; bottom: 0; left: calc(50vw - 175px)">
+        <div class="toast-header">
+          <strong class="mr-auto">You cannot have more than one player with the same name.</strong>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-    </body>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script type="module" src="js/main.js"></script>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script type="module" src="js/main.js"></script>
 </html>
