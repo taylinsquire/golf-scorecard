@@ -41,6 +41,7 @@ function changeCourse(courseID) {
         .click(() => {
           Render.displayCourse(course, i);
           currentTeeBox = i;
+          players.forEach(player => player.calculateScores());
         });
     }
   });
